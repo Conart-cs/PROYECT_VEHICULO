@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="miContenedor"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="pe.edu.upeu.sysventas.controller.VehiculoController"
+            style="-fx-background-color: #eef2f6;">
+
+    <children>
+
+        <BorderPane AnchorPane.topAnchor="0.0"
+                    AnchorPane.bottomAnchor="0.0"
+                    AnchorPane.leftAnchor="0.0"
+                    AnchorPane.rightAnchor="0.0">
+
+            <top>
+                <VBox>
+
+                    <!-- ENCABEZADO PRINCIPAL -->
+                    <StackPane prefHeight="145.0"
+                               style="-fx-background-color: #102a43;">
+
+                        <children>
+
+                            <VBox alignment="CENTER_LEFT"
+                                  spacing="5.0"
+                                  StackPane.alignment="CENTER_LEFT">
+
+                                <padding>
+                                    <Insets left="35.0"/>
+                                </padding>
+
+                                <children>
+
+                                    <Label text="🚘  PADRÓN VEHICULAR"
+                                           textFill="WHITE">
+                                        <font>
+                                            <Font name="System Bold"
+                                                  size="28.0"/>
+                                        </font>
+                                    </Label>
+
+                                    <Label text="Sistema de Registro y Control de Vehículos"
+                                           textFill="#c9d8e8">
+                                        <font>
+                                            <Font size="15.0"/>
+                                        </font>
+                                    </Label>
+
+                                </children>
+                            </VBox>
+
+                            <!-- IMAGEN DEL ENCABEZADO -->
+                            <ImageView fitHeight="115.0"
+                                       fitWidth="230.0"
+                                       preserveRatio="true"
+                                       opacity="0.9"
+                                       StackPane.alignment="CENTER_RIGHT"
+                                       translateX="-35.0">
+
+                                <image>
+                                    <Image url="@../img/vehiculo-header.png"/>
+                                </image>
+
+                            </ImageView>
+                            <Button text="Volver al menu"
+                                    onAction="#volverInicio"
+                                    prefHeight="35.0"
+                                    prefWidth="150.0"
+                                    StackPane.alignment="TOP_RIGHT"
+                                    translateX="-25.0"
+                                    translateY="15.0"
+                                    style="-fx-background-color: #34495e;
+                                            -fx-text-fill: white;
+                                            -fx-background-radius: 6;
+                                            -fx-font-weight: bold;
+                                            -fx-cursor: hand;"/>
+                        </children>
+                    </StackPane>
+
+
+                    <!-- TARJETAS DE ESTADÍSTICAS GENERALES -->
+                    <HBox spacing="15.0"
+                          alignment="CENTER"
+                          style="-fx-background-color: #eef2f6;">
+
+                        <padding>
+                            <Insets top="18.0"
+                                    right="25.0"
+                                    bottom="10.0"
+                                    left="25.0"/>
+                        </padding>
+
+                        <children>
+
+                            <VBox prefWidth="200.0"
+                                  prefHeight="70.0"
+                                  spacing="4.0"
+                                  alignment="CENTER_LEFT"
+                                  style="-fx-background-color: white;
+                                         -fx-background-radius: 10;
+                                         -fx-border-radius: 10;
+                                         -fx-border-color: #d8e0e8;
+                                         -fx-padding: 12;">
+
+                                <children>
+
+                                    <Label text="🚘  VEHÍCULOS"
+                                           textFill="#607080">
+                                        <font>
+                                            <Font name="System Bold"
+                                                  size="11.0"/>
+                                        </font>
+                                    </Label>
+
+                                    <Label fx:id="lblTotalVehiculos"
+                                           text="25"
+                                           textFill="#102a43">
+                                        <font>
+                                            <Font name="System Bold"
+                                                  size="23.0"/>
+                                        </font>
+                                    </Label>
+
+                                </children>
+                            </VBox>
+
+
+                            <VBox prefWidth="200.0"
+                                  prefHeight="70.0"
+                                  spacing="4.0"
+                                  alignment="CENTER_LEFT"
+                                  style="-fx-background-color: white;
+                                         -fx-background-radius: 10;
+                                         -fx-border-radius: 10;
+                                         -fx-border-color: #d8e0e8;
+                                         -fx-padding: 12;">
+
+                                <children>
+
+                                    <Label text="🏷  MARCAS"
+                                           textFill="#607080">
+                                        <font>
+                                            <Font name="System Bold"
+                                                  size="11.0"/>
+                                        </font>
+                                    </Label>
+
+                                    <Label fx:id="lblTotalMarcas"
+                                           text="8"
+                                           textFill="#102a43">
+                                        <font>
+                                            <Font name="System Bold"
+                                                  size="23.0"/>
+                                        </font>
+                                    </Label>
+
+                                </children>
+                            </VBox>
+
+
+                            <VBox prefWidth="200.0"
+                                  prefHeight="70.0"
+                                  spacing="4.0"
+                                  alignment="CENTER_LEFT"
+                                  style="-fx-background-color: white;
+                                         -fx-background-radius: 10;
+                                         -fx-border-radius: 10;
+                                         -fx-border-color: #d8e0e8;
+                                         -fx-padding: 12;">
+
+                                <children>
+
+                                    <Label text="📅  AÑO RECIENTE"
+                                           textFill="#607080">
+                                        <font>
+                                            <Font name="System Bold"
+                                                  size="11.0"/>
+                                        </font>
+                                    </Label>
+
+                                    <Label fx:id="lblAnioReciente"
+                                           text="2026"
+                                           textFill="#102a43">
+                                        <font>
+                                            <Font name="System Bold"
+                                                  size="23.0"/>
+                                        </font>
+                                    </Label>
+
+                                </children>
+                            </VBox>
+
+
+                            <VBox prefWidth="200.0"
+                                  prefHeight="70.0"
+                                  spacing="4.0"
+                                  alignment="CENTER_LEFT"
+                                  style="-fx-background-color: white;
+                                         -fx-background-radius: 10;
+                                         -fx-border-radius: 10;
+                                         -fx-border-color: #d8e0e8;
+                                         -fx-padding: 12;">
+
+                                <children>
+
+                                    <Label text="👤  PROPIETARIOS"
+                                           textFill="#607080">
+                                        <font>
+                                            <Font name="System Bold"
+                                                  size="11.0"/>
+                                        </font>
+                                    </Label>
+
+                                    <Label fx:id="lblTotalPropietarios"
+                                           text="21"
+                                           textFill="#102a43">
+                                        <font>
+                                            <Font name="System Bold"
+                                                  size="23.0"/>
+                                        </font>
+                                    </Label>
+
+                                </children>
+                            </VBox>
+
+                        </children>
+                    </HBox>
+
+
+                    <!-- BUSCADOR -->
+                    <HBox spacing="10.0"
+                          alignment="CENTER">
+
+                        <padding>
+                            <Insets top="8.0"
+                                    right="25.0"
+                                    bottom="12.0"
+                                    left="25.0"/>
+                        </padding>
+
+                        <children>
+
+                            <TextField fx:id="txtFiltroDato"
+                                       HBox.hgrow="ALWAYS"
+                                       promptText="🔍  Buscar por placa, marca, modelo, año, color o propietario..."
+                                       prefHeight="38.0"
+                                       style="-fx-background-color: white;
+                                              -fx-border-color: #cbd5df;
+                                              -fx-border-radius: 7;
+                                              -fx-background-radius: 7;
+                                              -fx-padding: 0 12;
+                                              -fx-font-size: 13px;"/>
+
+                            <Button text="LIMPIAR"
+                                    onAction="#limpiarFiltro"
+                                    prefHeight="38.0"
+                                    prefWidth="95.0"
+                                    style="-fx-background-color: #607080;
+                                           -fx-text-fill: white;
+                                           -fx-background-radius: 7;
+                                           -fx-font-weight: bold;
+                                           -fx-cursor: hand;"/>
+
+                        </children>
+                    </HBox>
+
+                </VBox>
+            </top>
+
+
+            <!-- CONTENIDO PRINCIPAL -->
+            <center>
+
+                <HBox spacing="18.0"
+                      fillHeight="true">
+
+                    <padding>
+                        <Insets top="5.0"
+                                right="25.0"
+                                bottom="20.0"
+                                left="25.0"/>
+                    </padding>
+
+                    <children>
+
+
+                        <!-- PANEL REGISTRO -->
+                        <VBox prefWidth="280.0"
+                              spacing="10.0"
+                              style="-fx-background-color: white;
+                                     -fx-background-radius: 12;
+                                     -fx-border-radius: 12;
+                                     -fx-border-color: #d8e0e8;
+                                     -fx-padding: 20;">
+
+                            <children>
+
+                                <Label text="REGISTRAR VEHÍCULO"
+                                       textFill="#102a43">
+                                    <font>
+                                        <Font name="System Bold"
+                                              size="18.0"/>
+                                    </font>
+                                </Label>
+
+                                <Label text="Complete los datos del vehículo"
+                                       textFill="#7b8794">
+                                    <font>
+                                        <Font size="11.0"/>
+                                    </font>
+                                </Label>
+
+
+                                <Label text="🪪  PLACA"
+                                       textFill="#334e68">
+                                    <font>
+                                        <Font name="System Bold"
+                                              size="11.0"/>
+                                    </font>
+                                </Label>
+
+                                <TextField fx:id="txtPlaca"
+                                           promptText="Ej. ABC-123"
+                                           prefHeight="35.0"
+                                           style="-fx-background-color: #f7f9fb;
+                                                  -fx-border-color: #bcccdc;
+                                                  -fx-border-radius: 6;
+                                                  -fx-background-radius: 6;"/>
+
+
+                                <Label text="🏷  MARCA"
+                                       textFill="#334e68">
+                                    <font>
+                                        <Font name="System Bold"
+                                              size="11.0"/>
+                                    </font>
+                                </Label>
+
+                                <ComboBox fx:id="cmbMarca"
+                                          promptText="Seleccione una marca"
+                                          prefHeight="35.0"
+                                          maxWidth="Infinity"
+                                          style="-fx-background-color: #f7f9fb;
+                                                 -fx-border-color: #bcccdc;
+                                                 -fx-border-radius: 6;
+                                                 -fx-background-radius: 6;"/>
+
+
+                                <Label text="🚗  MODELO"
+                                       textFill="#334e68">
+                                    <font>
+                                        <Font name="System Bold"
+                                              size="11.0"/>
+                                    </font>
+                                </Label>
+
+                                <ComboBox fx:id="cmbModelo"
+                                          promptText="Seleccione un modelo"
+                                          prefHeight="35.0"
+                                          maxWidth="Infinity"
+                                          style="-fx-background-color: #f7f9fb;
+                                                -fx-border-color: #bcccdc;
+                                                -fx-border-radius: 6;
+                                                -fx-background-radius: 6;"/>
+
+                                <HBox spacing="10.0">
+
+                                    <VBox spacing="5.0"
+                                          HBox.hgrow="ALWAYS">
+
+                                        <children>
+
+                                            <Label text="📅  AÑO"
+                                                   textFill="#334e68">
+                                                <font>
+                                                    <Font name="System Bold"
+                                                          size="11.0"/>
+                                                </font>
+                                            </Label>
+
+                                            <TextField fx:id="txtAnio"
+                                                       promptText="2024"
+                                                       prefHeight="35.0"
+                                                       style="-fx-background-color: #f7f9fb;
+                                                              -fx-border-color: #bcccdc;
+                                                              -fx-border-radius: 6;
+                                                              -fx-background-radius: 6;"/>
+
+                                        </children>
+                                    </VBox>
+
+
+                                    <VBox spacing="5.0"
+                                          HBox.hgrow="ALWAYS">
+
+                                        <children>
+
+                                            <Label text="🎨  COLOR"
+                                                   textFill="#334e68">
+                                                <font>
+                                                    <Font name="System Bold"
+                                                          size="11.0"/>
+                                                </font>
+                                            </Label>
+
+                                            <ComboBox fx:id="cmbColor"
+                                                      promptText="Seleccione"
+                                                      prefHeight="35.0"
+                                                      maxWidth="Infinity"
+                                                      style="-fx-background-color: #f7f9fb;
+                                                             -fx-border-color: #bcccdc;
+                                                             -fx-border-radius: 6;
+                                                             -fx-background-radius: 6;"/>
+
+                                        </children>
+                                    </VBox>
+
+                                </HBox>
+
+
+                                <Label text="👤  PROPIETARIO"
+                                       textFill="#334e68">
+                                    <font>
+                                        <Font name="System Bold"
+                                              size="11.0"/>
+                                    </font>
+                                </Label>
+
+                                <ComboBox fx:id="cmbPropietario"
+                                          promptText="Seleccione un propietario"
+                                          prefHeight="35.0"
+                                          maxWidth="Infinity"
+                                          style="-fx-background-color: #f7f9fb;
+                                                 -fx-border-color: #bcccdc;
+                                                 -fx-border-radius: 6;
+                                                 -fx-background-radius: 6;"/>
+
+
+                                <Button text="＋  REGISTRAR VEHÍCULO"
+                                        onAction="#validarFormulario"
+                                        prefHeight="42.0"
+                                        maxWidth="Infinity"
+                                        style="-fx-background-color: #1677ff;
+                                               -fx-text-fill: white;
+                                               -fx-background-radius: 7;
+                                               -fx-font-weight: bold;
+                                               -fx-cursor: hand;"/>
+
+
+                                <Label fx:id="lbnMsg"
+                                       text=""
+                                       wrapText="true"
+                                       textFill="red">
+                                    <font>
+                                        <Font size="12.0"/>
+                                    </font>
+                                </Label>
+
+                            </children>
+                        </VBox>
+
+
+                        <!-- ZONA DERECHA -->
+                        <VBox spacing="15.0"
+                              HBox.hgrow="ALWAYS">
+
+
+                            <!-- TABLA -->
+                            <VBox spacing="10.0"
+                                  VBox.vgrow="ALWAYS"
+                                  style="-fx-background-color: white;
+                                         -fx-background-radius: 12;
+                                         -fx-border-radius: 12;
+                                         -fx-border-color: #d8e0e8;
+                                         -fx-padding: 18;">
+
+                                <children>
+
+                                    <HBox alignment="CENTER_LEFT">
+
+                                        <children>
+
+                                            <VBox spacing="2.0">
+
+                                                <children>
+
+                                                    <Label text="PADRÓN DE VEHÍCULOS"
+                                                           textFill="#102a43">
+                                                        <font>
+                                                            <Font name="System Bold"
+                                                                  size="18.0"/>
+                                                        </font>
+                                                    </Label>
+
+                                                    <Label text="Listado de vehículos registrados"
+                                                           textFill="#7b8794">
+                                                        <font>
+                                                            <Font size="11.0"/>
+                                                        </font>
+                                                    </Label>
+
+                                                </children>
+
+                                            </VBox>
+
+                                        </children>
+                                    </HBox>
+
+
+                                    <TableView fx:id="tableView"
+                                               VBox.vgrow="ALWAYS"
+                                               style="-fx-background-color: white;
+                                                      -fx-border-color: #d8e0e8;
+                                                      -fx-border-radius: 6;
+                                                      -fx-background-radius: 6;"/>
+
+                                </children>
+                            </VBox>
+
+
+                            <!-- VEHÍCULO SELECCIONADO -->
+                            <VBox prefHeight="150.0"
+                                  spacing="10.0"
+                                  style="-fx-background-color: white;
+                                         -fx-background-radius: 12;
+                                         -fx-border-radius: 12;
+                                         -fx-border-color: #d8e0e8;
+                                         -fx-padding: 18;">
+
+                                <children>
+
+                                    <Label text="🚘  VEHÍCULO SELECCIONADO"
+                                           textFill="#102a43">
+                                        <font>
+                                            <Font name="System Bold"
+                                                  size="16.0"/>
+                                        </font>
+                                    </Label>
+
+                                    <HBox spacing="18.0"
+                                          alignment="CENTER_LEFT">
+
+                                        <children>
+
+                                            <!-- PLACA VISUAL -->
+                                            <StackPane prefWidth="135.0"
+                                                       prefHeight="55.0">
+
+                                                <children>
+
+                                                    <Rectangle width="135.0"
+                                                               height="55.0"
+                                                               arcWidth="10.0"
+                                                               arcHeight="10.0"
+                                                               fill="#f4f6f8"
+                                                               stroke="#9fb3c8"
+                                                               strokeWidth="2.0"/>
+
+                                                    <VBox alignment="CENTER"
+                                                          spacing="2.0">
+
+                                                        <children>
+
+                                                            <Label text="PERÚ"
+                                                                   textFill="#627d98">
+                                                                <font>
+                                                                    <Font name="System Bold"
+                                                                          size="8.0"/>
+                                                                </font>
+                                                            </Label>
+
+                                                            <Label fx:id="lblPlacaSeleccionada"
+                                                                   text="---"
+                                                                   textFill="#102a43">
+                                                                <font>
+                                                                    <Font name="System Bold"
+                                                                          size="17.0"/>
+                                                                </font>
+                                                            </Label>
+
+                                                        </children>
+
+                                                    </VBox>
+
+                                                </children>
+                                            </StackPane>
+
+
+                                            <VBox spacing="5.0">
+
+                                                <children>
+
+                                                    <Label fx:id="lblVehiculoSeleccionado"
+                                                           text="Seleccione un vehículo"
+                                                           textFill="#243b53">
+                                                        <font>
+                                                            <Font name="System Bold"
+                                                                  size="15.0"/>
+                                                        </font>
+                                                    </Label>
+
+                                                    <Label fx:id="lblDetalleVehiculo"
+                                                           text="Seleccione un vehículo"
+                                                           textFill="#627d98"/>
+
+                                                    <Label fx:id="lblPropietarioSeleccionado"
+                                                           text="Seleccione un vehículo"
+                                                           textFill="#627d98"/>
+
+                                                </children>
+
+                                            </VBox>
+
+                                        </children>
+                                    </HBox>
+
+                                </children>
+                            </VBox>
+
+                        </VBox>
+
+                    </children>
+                </HBox>
+
+            </center>
+
+        </BorderPane>
+
+    </children>
+
+</AnchorPane>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane style="-fx-background-color: #eef2f6;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysventas.controller.MainController">
+
+    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+        <!-- ENCABEZADO -->
+        <top>
+
+            <VBox spacing="5.0" style="-fx-background-color: #102a43;">
+
+                <padding>
+                    <Insets bottom="25.0" left="30.0" right="30.0" top="25.0" />
+                </padding>
+
+                <Label text="🚘 PADRÓN VEHICULAR BÁSICO" textFill="WHITE">
+
+                    <font>
+                        <Font name="System Bold" size="28.0" />
+                    </font>
+
+                </Label>
+
+                <Label text="Sistema de Registro y Control Vehicular" textFill="#c9d8e8">
+
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+
+                </Label>
+
+            </VBox>
+
+        </top>
+
+
+        <!-- CONTENIDO -->
+        <center>
+
+            <VBox alignment="TOP_CENTER" spacing="25.0">
+
+                <padding>
+                    <Insets bottom="30.0" left="40.0" right="40.0" top="30.0" />
+                </padding>
+
+
+                <!-- TITULO -->
+                <VBox alignment="CENTER" spacing="5.0">
+
+                    <Label text="MENÚ PRINCIPAL" textFill="#102a43">
+
+                        <font>
+                            <Font name="System Bold" size="22.0" />
+                        </font>
+
+                    </Label>
+
+                    <Label text="Seleccione el módulo que desea gestionar" textFill="#607080" />
+
+                </VBox>
+
+
+                <!-- BOTONES -->
+                <GridPane alignment="CENTER" hgap="20.0" vgap="20.0">
+
+                    <children>
+
+                        <!-- VEHICULOS -->
+                        <VBox alignment="CENTER" prefHeight="150.0" prefWidth="250.0" spacing="12.0" style="-fx-background-color: white;                                      -fx-background-radius: 12;                                      -fx-border-color: #d8e0e8;                                      -fx-border-radius: 12;                                      -fx-padding: 20;" GridPane.columnIndex="0" GridPane.rowIndex="0">
+
+                            <Label text="🚗" textFill="#102a43">
+
+                                <font>
+                                    <Font size="35.0" />
+                                </font>
+
+                            </Label>
+
+                            <Label text="VEHÍCULOS" textFill="#102a43">
+
+                                <font>
+                                    <Font name="System Bold" size="18.0" />
+                                </font>
+
+                            </Label>
+
+                            <Button onAction="#abrirVehiculos" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #1677ff;                                            -fx-text-fill: white;                                            -fx-background-radius: 7;                                            -fx-font-weight: bold;" text="GESTIONAR" />
+
+                        </VBox>
+
+
+                        <!-- PROPIETARIOS -->
+                        <VBox alignment="CENTER" prefHeight="150.0" prefWidth="250.0" spacing="12.0" style="-fx-background-color: white;                                      -fx-background-radius: 12;                                      -fx-border-color: #d8e0e8;                                      -fx-border-radius: 12;                                      -fx-padding: 20;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+
+                            <Label text="👤" textFill="#102a43">
+
+                                <font>
+                                    <Font size="35.0" />
+                                </font>
+
+                            </Label>
+
+                            <Label text="PROPIETARIOS" textFill="#102a43">
+
+                                <font>
+                                    <Font name="System Bold" size="18.0" />
+                                </font>
+
+                            </Label>
+
+                            <Button onAction="#abrirPropietarios" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #1677ff;                                            -fx-text-fill: white;                                            -fx-background-radius: 7;                                            -fx-font-weight: bold;" text="GESTIONAR" />
+
+                        </VBox>
+
+
+                        <!-- MARCAS -->
+                        <VBox alignment="CENTER" prefHeight="150.0" prefWidth="250.0" spacing="12.0" style="-fx-background-color: white;                                      -fx-background-radius: 12;                                      -fx-border-color: #d8e0e8;                                      -fx-border-radius: 12;                                      -fx-padding: 20;" GridPane.columnIndex="0" GridPane.rowIndex="1">
+
+                            <Label text="🏷️" textFill="#102a43">
+
+                                <font>
+                                    <Font size="35.0" />
+                                </font>
+
+                            </Label>
+
+                            <Label text="MARCAS" textFill="#102a43">
+
+                                <font>
+                                    <Font name="System Bold" size="18.0" />
+                                </font>
+
+                            </Label>
+
+                            <Button onAction="#abrirMarcas" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #1677ff;                                            -fx-text-fill: white;                                            -fx-background-radius: 7;                                            -fx-font-weight: bold;" text="GESTIONAR" />
+
+                        </VBox>
+
+
+                        <!-- INFRACCIONES -->
+                        <VBox alignment="CENTER" prefHeight="150.0" prefWidth="250.0" spacing="12.0" style="-fx-background-color: white;                                      -fx-background-radius: 12;                                      -fx-border-color: #d8e0e8;                                      -fx-border-radius: 12;                                      -fx-padding: 20;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+
+                            <Label text="⚠️" textFill="#102a43">
+
+                                <font>
+                                    <Font size="35.0" />
+                                </font>
+
+                            </Label>
+
+                            <Label text="INFRACCIONES" textFill="#102a43">
+
+                                <font>
+                                    <Font name="System Bold" size="18.0" />
+                                </font>
+
+                            </Label>
+
+                            <Button onAction="#abrirInfracciones" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #1677ff;                                            -fx-text-fill: white;                                            -fx-background-radius: 7;                                            -fx-font-weight: bold;" text="GESTIONAR" />
+
+                        </VBox>
+
+                    </children>
+               <columnConstraints>
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+
+                </GridPane>
+
+
+                <!-- INFORMACION -->
+                <HBox alignment="CENTER" spacing="10.0" style="-fx-background-color: white;                              -fx-background-radius: 10;                              -fx-border-color: #d8e0e8;                              -fx-border-radius: 10;                              -fx-padding: 15;">
+
+                    <Label text="Este sistema es un padrón vehicular digital diseñado para registrar, administrar y controlar de manera eficiente la información de todas las unidades" textFill="#607080" />
+
+                </HBox>
+
+            </VBox>
+
+        </center>
+
+
+        <!-- PIE -->
+        <bottom>
+
+            <HBox alignment="CENTER" style="-fx-background-color: #102a43;">
+
+                <padding>
+                    <Insets bottom="10.0" top="10.0" />
+                </padding>
+
+                <Label text="GRUPO - TEAM SECRET / FERNANDO CEREZO / BRYAN CASTILLO / BRAYAN SANCHEZ / GABRIEL CHAIÑA" textFill="#c9d8e8" />
+
+            </HBox>
+
+        </bottom>
+
+    </BorderPane>
+
+</AnchorPane>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.ComboBox?>
+<AnchorPane fx:id="miContenedor"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="pe.edu.upeu.sysventas.controller.InfraccionController">
+
+    <BorderPane AnchorPane.topAnchor="0"
+                AnchorPane.bottomAnchor="0"
+                AnchorPane.leftAnchor="0"
+                AnchorPane.rightAnchor="0">
+
+        <!-- ENCABEZADO -->
+        <top>
+            <HBox spacing="20"
+                  alignment="CENTER_LEFT"
+                  style="-fx-background-color: #1e3a5f;">
+
+                <padding>
+                    <Insets top="20"
+                            right="25"
+                            bottom="20"
+                            left="25"/>
+                </padding>
+
+                <VBox spacing="5"
+                      HBox.hgrow="ALWAYS">
+
+                    <Label text="🚨 GESTIÓN DE INFRACCIONES"
+                           style="-fx-text-fill: white;
+                          -fx-font-size: 26px;
+                          -fx-font-weight: bold;"/>
+
+                    <Label text="Registro y administración de infracciones vehiculares"
+                           style="-fx-text-fill: #dbeafe;
+                          -fx-font-size: 14px;"/>
+
+                </VBox>
+
+                <Button text="←  Volver al inicio"
+                        onAction="#volverInicio"
+                        prefHeight="35"
+                        prefWidth="150"
+                        style="-fx-background-color: #34495e;
+                       -fx-text-fill: white;
+                       -fx-background-radius: 6;
+                       -fx-font-weight: bold;
+                       -fx-cursor: hand;"/>
+
+            </HBox>
+        </top>
+        <!-- CONTENIDO -->
+        <center>
+            <HBox spacing="20">
+
+                <padding>
+                    <Insets top="25"
+                            right="25"
+                            bottom="25"
+                            left="25"/>
+                </padding>
+
+                <!-- FORMULARIO -->
+                <VBox spacing="12"
+                      prefWidth="300"
+                      style="-fx-background-color: white;
+                             -fx-background-radius: 10;
+                             -fx-padding: 20;">
+
+                    <Label text="Registrar infracción"
+                           style="-fx-font-size: 20px;
+                                  -fx-font-weight: bold;
+                                  -fx-text-fill: #1e293b;"/>
+
+                    <Label text="Código"/>
+
+                    <TextField fx:id="txtCodigo"
+                               promptText="Ejemplo: A01"/>
+
+                    <Label text="Descripción"/>
+
+                    <TextField fx:id="txtDescripcion"
+                               promptText="Ingrese la descripción"/>
+
+                    <Label text="Gravedad"/>
+
+                    <TextField fx:id="txtGravedad"
+                               promptText="Ejemplo: Grave"/>
+
+                    <Label text="Multa"/>
+
+                    <TextField fx:id="txtMulta"
+                               promptText="Ejemplo: 350.00"/>
+
+                    <Label text="Vehículo"/>
+
+                    <ComboBox fx:id="cmbVehiculo"
+                              promptText="Seleccione un vehículo"
+                              prefHeight="35"
+                              maxWidth="Infinity"/>
+
+                    <Button text="💾 GUARDAR INFRACCIÓN"
+                            onAction="#validarFormulario"
+                            maxWidth="Infinity"
+                            prefHeight="42"
+                            style="-fx-background-color: #2563eb;
+                                   -fx-text-fill: white;
+                                   -fx-font-weight: bold;
+                                   -fx-background-radius: 6;"/>
+
+                    <Button text="🧹 LIMPIAR"
+                            onAction="#clearForm"
+                            maxWidth="Infinity"
+                            prefHeight="35"
+                            style="-fx-background-color: #64748b;
+                                   -fx-text-fill: white;
+                                   -fx-font-weight: bold;
+                                   -fx-background-radius: 6;"/>
+
+                    <Label fx:id="lbnMsg"
+                           wrapText="true"
+                           style="-fx-text-fill: red;
+                                  -fx-font-size: 14px;"/>
+
+                </VBox>
+
+                <!-- TABLA -->
+                <VBox spacing="15"
+                      VBox.vgrow="ALWAYS"
+                      HBox.hgrow="ALWAYS">
+
+                    <!-- BUSCADOR -->
+                    <HBox spacing="10">
+
+                        <TextField fx:id="txtFiltroDato"
+                                   promptText="Buscar por código, descripción, gravedad o vehículo..."
+                                   HBox.hgrow="ALWAYS"/>
+
+                        <Button text="Limpiar"
+                                onAction="#limpiarFiltro"
+                                prefWidth="90"/>
+
+                    </HBox>
+
+                    <Label text="Infracciones registradas"
+                           style="-fx-font-size: 20px;
+                                  -fx-font-weight: bold;
+                                  -fx-text-fill: #1e293b;"/>
+
+                    <TableView fx:id="tableView"
+                               VBox.vgrow="ALWAYS"/>
+
+                </VBox>
+
+            </HBox>
+        </center>
+
+    </BorderPane>
+
+</AnchorPane>
